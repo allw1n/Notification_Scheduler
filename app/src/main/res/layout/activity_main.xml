@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="12dp">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/viewNetworkType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/network_type"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroupNetworkType" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupNetworkType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewNetworkType"
+        app:layout_constraintBottom_toTopOf="@+id/viewDeviceState">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radioNone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/none"
+            android:checked="true"/>
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radioAny"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/any" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radioWifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wifi" />
+
+    </RadioGroup>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/viewDeviceState"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/device_state"
+        android:textSize="20sp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radioGroupNetworkType"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/switchIdle" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switchIdle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:switchPadding="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewDeviceState"
+        app:layout_constraintBottom_toTopOf="@id/switchCharging"
+        app:layout_constraintEnd_toStartOf="@id/viewSwitchIdle"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/viewSwitchIdle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/idle"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/switchIdle"
+        app:layout_constraintTop_toBottomOf="@id/viewDeviceState"
+        app:layout_constraintBottom_toTopOf="@id/viewSwitchCharging"/>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switchCharging"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:switchPadding="6dp"
+        app:layout_constraintStart_toEndOf="@+id/viewSwitchCharging"
+        app:layout_constraintTop_toBottomOf="@id/switchIdle"
+        app:layout_constraintBottom_toTopOf="@id/viewOverrideDeadline"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/viewSwitchCharging"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/not_charging"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/switchCharging"
+        app:layout_constraintTop_toBottomOf="@id/viewSwitchIdle"
+        app:layout_constraintBottom_toTopOf="@id/viewOverrideDeadline"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/viewOverrideDeadline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/override_deadline"
+        android:textSize="20sp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/switchCharging"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewOverrideDeadline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSchedule"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonSchedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/schedule_job"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seekBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCancel" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel_jobs"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonSchedule"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

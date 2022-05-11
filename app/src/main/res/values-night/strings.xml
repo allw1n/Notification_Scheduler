@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="active">Active</string>
+    <string name="idle">Idle</string>
+    <string name="charging">Charging</string>
+    <string name="not_charging">Not charging</string>
+    <string name="network_type">Network Type:</string>
+    <string name="device_state">Device State:</string>
+    <string name="none">None</string>
+    <string name="any">Any</string>
+    <string name="wifi">WiFi</string>
+    <string name="override_deadline">Override Deadline:</string>
+    <string name="schedule_job">Schedule Job</string>
+    <string name="cancel_jobs">Cancel Jobs</string>
+</resources>
