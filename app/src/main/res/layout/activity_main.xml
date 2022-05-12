@@ -76,17 +76,19 @@
         android:layout_height="wrap_content"
         android:text="@string/idle"
         android:textSize="20sp"
+        android:layout_marginStart="6dp"
         app:layout_constraintStart_toEndOf="@+id/switchIdle"
-        app:layout_constraintTop_toBottomOf="@id/viewDeviceState"
-        app:layout_constraintBottom_toTopOf="@id/viewSwitchCharging"/>
+        app:layout_constraintTop_toTopOf="@id/switchIdle"
+        app:layout_constraintBottom_toBottomOf="@+id/switchIdle"/>
 
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/switchCharging"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:switchPadding="6dp"
-        app:layout_constraintStart_toEndOf="@+id/viewSwitchCharging"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/switchIdle"
+        app:layout_constraintEnd_toStartOf="@id/viewSwitchCharging"
         app:layout_constraintBottom_toTopOf="@id/viewOverrideDeadline"/>
 
     <com.google.android.material.textview.MaterialTextView
@@ -95,21 +97,32 @@
         android:layout_height="wrap_content"
         android:text="@string/not_charging"
         android:textSize="20sp"
+        android:layout_marginStart="6dp"
         app:layout_constraintStart_toEndOf="@+id/switchCharging"
-        app:layout_constraintTop_toBottomOf="@id/viewSwitchIdle"
-        app:layout_constraintBottom_toTopOf="@id/viewOverrideDeadline"/>
+        app:layout_constraintTop_toTopOf="@id/switchCharging"
+        app:layout_constraintBottom_toBottomOf="@id/switchCharging"/>
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/viewOverrideDeadline"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/override_deadline"
         android:textSize="20sp"
         android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/switchCharging"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/viewSeekBarProgress"
         app:layout_constraintBottom_toTopOf="@+id/seekBar" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/viewSeekBarProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/not_set"
+        android:textSize="20sp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toEndOf="@id/viewOverrideDeadline"
+        app:layout_constraintBottom_toBottomOf="@id/viewOverrideDeadline"/>
 
     <SeekBar
         android:id="@+id/seekBar"

@@ -9,7 +9,10 @@
     <string name="none">None</string>
     <string name="any">Any</string>
     <string name="wifi">WiFi</string>
-    <string name="override_deadline">Override Deadline:</string>
+    <string name="override_deadline">Override Deadline:&#160;</string>
     <string name="schedule_job">Schedule Job</string>
     <string name="cancel_jobs">Cancel Jobs</string>
+    <string name="job_service">Job Service</string>
+    <string name="your_job_is_running">Your job is running!</string>
+    <string name="not_set">Not set</string>
 </resources>
