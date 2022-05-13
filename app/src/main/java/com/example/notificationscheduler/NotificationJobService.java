@@ -7,6 +7,7 @@ import android.app.job.JobParameters;
 import android.app.job.JobService;
 import android.content.Intent;
 import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -58,9 +59,15 @@ public class NotificationJobService extends JobService {
             @Override
             public void run() {
                 Log.d("Executor slept for", "10 seconds");
-                Toast.makeText(NotificationJobService.this,
-                        "Executor slept for 10 seconds.",
-                        Toast.LENGTH_SHORT).show();
+
+                new Handler(Looper.getMainLooper()).post(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(NotificationJobService.this,
+                                "Executor slept for 10 seconds.",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         };
 
