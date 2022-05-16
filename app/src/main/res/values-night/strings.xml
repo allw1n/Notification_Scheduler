@@ -15,4 +15,6 @@
     <string name="job_service">Job Service</string>
     <string name="your_job_is_running">Your job is running!</string>
     <string name="not_set">Not set</string>
+    <string name="active_or_idle">Active or Idle</string>
+    <string name="charging_or_not_charging">Charging or Not Charging</string>
 </resources>
